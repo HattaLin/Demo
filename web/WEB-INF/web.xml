@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+    <!--配置全局配置信息 每一个Servlet都可以直接获取到这个参数-->
+    <context-param>
+        <param-name>encoding</param-name>
+        <param-value>utf-8</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>net.lqy.servlet.HelloServlet</servlet-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hi</url-pattern>
+    </servlet-mapping>
+
+</web-app>
